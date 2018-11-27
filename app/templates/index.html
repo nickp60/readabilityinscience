@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+  <div class="row">
+    <div class="eight columns" style="margin-top: 20%">
+      <h4>Does it make sense?</h4>
+      <p>Calculate the readability of your abstract according to "The readability of scientific texts is decreasing over time" <a href="https://elifesciences.org/articles/27725">Click here for paper</a> </p>
+    </div>
+    <div class="four columns columns" style="margin-top: 20%">
+      <a href="https://github.com/wiheto/readabilityinscience" target="_blank">
+	<img src="{{url_for('static', filename='548421.png')}}"
+	     style='width:100%;' border="0" alt="Null">
+      </a>
+    </div>
+  </div>
+  <!-- Input Buttons -->
+  <div class="row">
+    <form action="" method="POST" >
+      <b>1:</b>&emsp;<input type="text" name="textinput"><br>
+      <b>2:</b>&emsp;<input type="submit" name="submitupload" value="analyze" >
+
+    </form>
+  </div>
+
+  <!-- Download Button -->
+  <div class="row"  style='color:darkgray'>
+    <pre>{{ teaser }}</pre>
+    <!-- <pre>{{ nlines }}</pre> -->
+  </div>
+  {% if session['LOADED'] %}
+    <div class="row"  style='color:black'>
+      <h4>Results:</h4>
+      <pre> {{ results }}</pre>
+    </div>
+  {% endif %}
+
+</div>
+{% endblock %}
