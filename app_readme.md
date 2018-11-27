@@ -1,5 +1,5 @@
 # App
-conda create -n read  pandas numpy
+conda create -n read flask  pandas numpy
 pip install curses
 pip install treetaggerwrapper
 pip install nltk

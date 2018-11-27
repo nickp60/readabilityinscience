@@ -25,13 +25,17 @@
 
   <!-- Download Button -->
   <div class="row"  style='color:darkgray'>
-    <pre>{{ teaser }}</pre>
+    <p>{{ teaser }}</p>
     <!-- <pre>{{ nlines }}</pre> -->
   </div>
   {% if session['LOADED'] %}
     <div class="row"  style='color:black'>
       <h4>Results:</h4>
-      <pre> {{ results }}</pre>
+      <p><b> {{ results.flesch|round }}</b>    Flesch Reading Ease (FRE, high is good)</p>
+      <p><b> {{ results.NDC|round }}</b>    New Dale-Chall Readability Score (NDC, low is good)</p>
+      <p><b> {{ results.PercDiffWord|round }} %</b>  Difficult words</p>
+      <p><b> {{ results.wordCount }}</b>    Words,  <b>{{ results.sentenceCount }}</b>    Sentence(s)</p>
+      <p>Difficult words: <p>{{ results.DiffWord_lst }}   </p></p>
     </div>
   {% endif %}
 
